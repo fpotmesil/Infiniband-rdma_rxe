@@ -154,4 +154,14 @@ cache:
   L1-icache-load-misses OR armv8_cortex_a72/L1-icache-load-misses/   
   dTLB-load-misses OR armv8_cortex_a72/dTLB-load-misses/   
   dTLB-store-misses OR armv8_cortex_a72/dTLB-store-misses/   
-   .....................and a lot more, perf will work.......................   
+   .....................and a lot more, perf will work.......................    
+
+Finally to run some perf tests on the Pi board.   
+Chose tag_lat from the available tests and ran with Red Hat as the server.  Throughput does not look impressive:   
+<img src="images/ucxPerftest_tag_lat.png">
+Flamegraph for tag_lat:
+<img src="images/tag_lat_flamegraph.svg">
+   
+   
+
+
