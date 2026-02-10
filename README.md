@@ -161,6 +161,11 @@ Chose tag_lat from the available tests and ran with Red Hat as the server.  Thro
 <img src="images/ucxPerftest_tag_lat.png">
 Flamegraph for tag_lat shows we are sitting in epoll_pwait for 70% of the time:   
 <img src="images/tag_lat_flamegraph.svg">
+
+Ran perftest with the ucp_put_bw test option:   
+<img src="images/ucxPerftest_ucp_put_bw.png">
+Flamegraph for ucp_put_bw shows some neat things, have to learn more about tcp_sendmsg_locked and release_sock:   
+<img src="images/ucp_put_bw_flamegraph.svg">
    
    
 
