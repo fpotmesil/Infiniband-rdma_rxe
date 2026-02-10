@@ -5,10 +5,10 @@ Roie told me about the ucx project, RDMA, and Infiniband.  Network throughput an
 
 I pulled and built the ucx master branch on a Raspberry Pi 4 board and a Red Hat 8.10 system.    
 Running the hello world example stumped me at first because my Red Hat server has a firewall, kind of a duh moment!   
-[<img src="images/UcxWithFirewall.png">]
+<img src="images/UcxWithFirewall.png">
 
 But then after trusting the Pi:   
-[<img src="images/UcxFirewallConfigured.png">]
+<img src="images/UcxFirewallConfigured.png">
    
 Researching RDMA and Infiniband more led me to RDMA over coverged ethernet (ROCE), and I priced out some cool NICs on ebay.  Unfortunately those are outside of my play budget.  I did learn about the Infiniband rdma_rxe module though.  
 
