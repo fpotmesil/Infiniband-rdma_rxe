@@ -164,9 +164,10 @@ Flamegraph for tag_lat shows we are sitting in epoll_pwait for 70% of the time:
 
 Ran perftest with the ucp_put_bw test option:   
 <img src="images/ucxPerftest_ucp_put_bw.png">
-Flamegraph for ucp_put_bw shows some neat things, have to learn more about tcp_sendmsg_locked and release_sock:   
+Flamegraph for ucp_put_bw shows some neat things - what was my swapper doing?  Is that just ssh stuff going on?  And why so much in tcp_sendmsg_locked?  And can I use UDP for any of the tests?     
 <img src="images/ucp_put_bw_flamegraph.svg">
    
+
    
 
 
