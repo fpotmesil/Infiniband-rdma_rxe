@@ -159,7 +159,7 @@ cache:
 Finally to run some perf tests on the Pi board.   
 Chose tag_lat from the available tests and ran with Red Hat as the server.  Throughput does not look impressive:   
 <img src="images/ucxPerftest_tag_lat.png">
-Flamegraph for tag_lat:
+Flamegraph for tag_lat shows we are sitting in epoll_pwait for 70% of the time:   
 <img src="images/tag_lat_flamegraph.svg">
    
    
