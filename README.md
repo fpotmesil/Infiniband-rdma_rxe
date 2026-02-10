@@ -11,7 +11,7 @@ But then after trusting the Pi:
 <img src="images/UcxFirewallConfigured.png">
 
 Ran the test suite gtest on the Red Hat system, some failed so will investigate further when I can:   
-<img src="images/UcxGtest.png">
+<img src="images/ucxGtest.png">
    
    
 Researching RDMA and Infiniband more led me to RDMA over coverged ethernet (ROCE), and I priced out some cool NICs on ebay.  Unfortunately those are outside of my play budget.  I did learn about the Infiniband rdma_rxe module though.  
