@@ -71,4 +71,78 @@ fred@galileo:~ $ rdma link show
 link rxe0/1 state ACTIVE physical_state LINK_UP netdev eth0   
 fred@galileo:~ $   
 
+Now go back into the kernel tree and build perf for our shiny new kernel.  
 
+cd linux   
+make -C tools/perf/   
+
+Several dependency errors have to be resolved but most of the packages are
+thankfully available for the Pi.  There were some ABI warnings also, but I ignored all that and just hoped for a mostly working perf.   
+
+
+after fighting dependencies for a long while   
+Makefile.config:1223: libtracefs is missing. Please install libtracefs-dev/libtracefs-devel   
+   
+Auto-detecting system features:   
+...                                   dwarf: [ on  ]   
+...                      dwarf_getlocations: [ on  ]   
+...                                   glibc: [ on  ]   
+...                                  libbfd: [ OFF ]   
+...                          libbfd-buildid: [ OFF ]   
+...                                  libcap: [ OFF ]   
+...                                  libelf: [ on  ]   
+...                                 libnuma: [ on  ]   
+...                  numa_num_possible_cpus: [ on  ]   
+...                                 libperl: [ on  ]   
+...                               libpython: [ on  ]   
+...                               libcrypto: [ on  ]   
+...                               libunwind: [ OFF ]   
+...                      libdw-dwarf-unwind: [ on  ]   
+...                             libcapstone: [ OFF ]   
+...                               llvm-perf: [ OFF ]   
+...                                    zlib: [ on  ]   
+...                                    lzma: [ on  ]   
+...                               get_cpuid: [ OFF ]   
+...                                     bpf: [ on  ]   
+...                                  libaio: [ on  ]   
+...                                 libzstd: [ OFF ]   
+   
+and then waiting for a build:   
+fred@galileo:~/Kernel/linux $ ./tools/perf/perf list   
+   
+List of pre-defined events (to be used in -e or -M):   
+   
+  branch-misses                                      [Hardware event]   
+  bus-cycles                                         [Hardware event]   
+  cache-misses                                       [Hardware event]   
+  cache-references                                   [Hardware event]   
+  cpu-cycles OR cycles                               [Hardware event]   
+  instructions                                       [Hardware event]   
+  alignment-faults                                   [Software event]   
+  bpf-output                                         [Software event]   
+  cgroup-switches                                    [Software event]   
+  context-switches OR cs                             [Software event]   
+  cpu-clock                                          [Software event]   
+  cpu-migrations OR migrations                       [Software event]   
+  dummy                                              [Software event]   
+  emulation-faults                                   [Software event]   
+  major-faults                                       [Software event]   
+  minor-faults                                       [Software event]   
+  page-faults OR faults                              [Software event]   
+  task-clock                                         [Software event]   
+      
+tool:   
+  duration_time   
+  user_time   
+  system_time   
+   
+cache:   
+  L1-dcache-loads OR armv8_cortex_a72/L1-dcache-loads/   
+  L1-dcache-load-misses OR armv8_cortex_a72/L1-dcache-load-misses/   
+  L1-dcache-stores OR armv8_cortex_a72/L1-dcache-stores/   
+  L1-dcache-store-misses OR armv8_cortex_a72/L1-dcache-store-misses/   
+  L1-icache-loads OR armv8_cortex_a72/L1-icache-loads/   
+  L1-icache-load-misses OR armv8_cortex_a72/L1-icache-load-misses/   
+  dTLB-load-misses OR armv8_cortex_a72/dTLB-load-misses/   
+  dTLB-store-misses OR armv8_cortex_a72/dTLB-store-misses/   
+   .....................and a lot more, perf will work.......................   
