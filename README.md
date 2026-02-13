@@ -167,10 +167,10 @@ Ran perftest with the ucp_put_bw test option:
 Flamegraph for ucp_put_bw shows some neat things - what was my swapper doing?  Is that just ssh stuff going on?  And why so much in tcp_sendmsg_locked?  And can I use UDP for any of the tests?  Have to look into the test code more to see what the ping-pong is doing, I kind of expected better/faster results.  It would be interesting to test this with a monitor on the Pi and no ssh going on through the same connection but not today.     
 <img src="images/ucp_put_bw_flamegraph.svg">
 
-Still reading up on the performance tests and transports
-https://openucx.readthedocs.io/en/master/faq.html#which-network-devices-does-ucx-use
-https://github.com/openucx/ucx/wiki/Performance-measurement
-
+Still reading up on the performance tests and transports   
+https://openucx.readthedocs.io/en/master/faq.html#which-network-devices-does-ucx-use   
+https://github.com/openucx/ucx/wiki/Performance-measurement   
+   
 Tried stream_bw just for fun.  Same setup, snapperhead for the server and the Pi is the client, and used perf on both sides for flamegraphs.  Lost my transport and device environment variables after a couple of days, and could not really get them to work for this test?  Warrants further investigation maybe.   
 <img src="images/ucx_perftest_stream_bw.png">
 
