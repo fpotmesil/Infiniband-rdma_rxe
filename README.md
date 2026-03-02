@@ -1,7 +1,6 @@
 # Infiniband-rdma_rxe
 
-How it all started:  
-Roie told me about the ucx project, RDMA, and Infiniband.  Network throughput and performance is pretty cool stuff and has always fascinated me.    
+Learning about the ucx project, RDMA, and Infiniband.  Network throughput and performance is pretty cool stuff and has always fascinated me.    
 
 I pulled and built the ucx master branch on a Raspberry Pi 4 board and a Red Hat 8.10 system.    
 Running the hello world example stumped me at first because my Red Hat server has a firewall, kind of a duh moment!   
